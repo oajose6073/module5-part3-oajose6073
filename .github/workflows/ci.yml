@@ -1,3 +1,21 @@
+# ==========================================================================
+# What this file is
+# ==========================================================================
+# This is a GitHub Actions workflow file. It tells GitHub to automatically
+# test my code every time I push to the main branch or open a pull request
+# into main. I don't have to run the tests by hand; GitHub does it for me.
+#
+# When it runs, GitHub starts a fresh Ubuntu machine, downloads my code,
+# installs Python and the backend's requirements, and then runs the
+# backend tests with pytest. It also starts a MongoDB container next to
+# the job so a real database is available if the tests need one.
+#
+# If every test passes, the run gets a green checkmark. If anything fails,
+# it shows a red X, so I know right away that a change broke something
+# before it gets merged or deployed. This is the Continuous Integration
+# (CI) part of CI/CD: every change is built and tested automatically,
+# and the results are recorded for each commit.
+# ==========================================================================
 name: CI Pipeline  ## Workflow name shown in GitHub Actions UI
 
 on:
